@@ -1,0 +1,45 @@
+<div class="container-fluid h-100 content">
+  <div class="row justify-content-center h-100">
+    <div class= "col-sm-3">
+    </div>
+    <div class= "col-sm-6 new-checklist">
+      <form>
+
+        <div class="form-group mb-3 mx-sm-3 checklist-name">
+            <h4> Checklist_1 </h4>
+            <!--input type="text" name="checklistname" placeholder="Checklist name" [(ngModel)]="checklistname" aria-label="Checklistname" aria-describedby="basic-addon1"-->
+        </div>      
+        <div class="form-row">
+          <div class="form-group col-sm-10">
+            <input type="text" name="itemname" class="form-control" placeholder="New Item" [(ngModel)]="item.name" aria-label="Username" aria-describedby="basic-addon1">                                
+          </div>
+          <div class="form-group col-sm-2">            
+            <input type="button" class="btn btn-primary" (click)=addNewItem() value="ADD">
+          </div>
+        </div>
+        <div class="form-group">            
+          <ul class="list-group" *ngFor="let item of list">
+            <li class="list-group-item d-flex justify-content-between">
+              <span> {{item.name}} </span>
+              <button [ngClass]="item.done?'mx-sm-3 btn btn-sm btn-success badge-pill':'mx-sm-3 btn btn-sm btn-danger badge-pill'" (click)='checkItem($event, item.name)'>
+                {{item.done?'Done':'Not Done'}}
+              </button>              
+            </li>
+          </ul>            
+        </div>
+
+        <!--div *ngIf="finished===true" class="text-center mt-3">
+            <button class="btn btn-success">Finished</button>
+        </div-->
+        <div class="form-group">
+          <button class="btn btn-primary" (click)=saveChecklist()>Save</button>
+        </div>
+      
+      </form>       
+    </div>
+    <div class= "col-sm-3">
+    </div>  
+  </div>  
+</div>
+
+

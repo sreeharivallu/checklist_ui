@@ -1,0 +1,21 @@
+.outer {
+    height: 100%;
+    width: 100%;
+    display: table;
+    position: absolute;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.heading {
+    color :  whitesmoke;
+    font-weight: 700;
+    display: inline;    
+}
+
+.fa-check {
+    color : whitesmoke;
+}
